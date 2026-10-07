@@ -38,7 +38,7 @@ const shots = [
   { name: 'music', hash: 'music', wait: 9000, prep: `document.querySelector('[data-track=song]').click()` },
   { name: 'trading', hash: 'trading', wait: 35000 },
   { name: 'feeding', hash: 'feeding', wait: 2600 },
-  { name: 'groom', hash: 'groom', wait: 900, prep: `document.querySelector('#scenarios button[data-id="groom"]').click()` },
+  { name: 'groom', hash: 'groom', wait: 400, prep: `document.querySelector('#scenarios button[data-id="groom"]').click()` },
   { name: 'escape', hash: 'escape', wait: 2300 },
   { name: 'courtship', hash: 'courtship', wait: 9000 },
   { name: 'poke', hash: 'poke', wait: 5000, prep: `(() => { const i = document.querySelector('[data-type]'); i.value = 'MDN'; document.querySelector('[data-act=go]').click(); })()` },

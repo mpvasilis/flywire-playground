@@ -197,13 +197,13 @@ export function buildScenarios(ctx) {
     id: 'groom', title: '🧼 Antennal grooming', stageProps: [],
     inputs: ['JO-F'], readouts: ['DNg35', 'DNg84', 'antennal_MN', 'neck_MN', 'proboscis_MN', 'MDN'],
     blurb: `Shiu et al. (2024) predicted from this very model that activating the JO-F mechanosensory neurons of the antenna drives the
-      descending neurons for antennal grooming, and then confirmed it in real flies. Here the JO-F population is switched on for one second
+      descending neurons for antennal grooming, and then confirmed it in real flies. Here the JO-F population is switched on for two seconds
       at a time (150 Hz Poisson, like optogenetic activation). The two most strongly recruited descending neuron types in this build,
       DNg35 and DNg84, drive the front-leg grooming sweep of the avatar.`,
     controls: `<div class="row"><label>Stimulus rate <input type="range" min="0" max="200" step="10" value="150" data-rate></label><span data-state></span></div>`,
     start() { this.t = 0; this.rate = 150; sim.stim('JO-F', G['JO-F'], 0); ui.controls.querySelector('[data-rate]').oninput = (e) => { this.rate = +e.target.value; }; },
     tick(dt) {
-      this.t += dt; const on = (this.t % 3.0) < 1.2;
+      this.t += dt; const on = (this.t % 4.0) < 2.0;
       sim.rate('JO-F', on ? this.rate : 0);
       ui.controls.querySelector('[data-state]').textContent = on ? '● JO-F ON' : '○ off';
       driveFly(fly, sim.rates); return 0;
