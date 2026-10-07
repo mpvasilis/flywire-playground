@@ -19,6 +19,20 @@ Scenarios shipped:
 
 Music can come from the built-in **synthesized Drosophila courtship song**, a **techno beat**, **any audio file**, or the **microphone**.
 
+Live demo (GitHub Pages, needs WebGL and a desktop browser): <https://mpvasilis.github.io/flywire-playground/>
+
+![Fly listening to music: the male sings, the female's Johnston's organ afferents fire and the descending neurons light up](docs/screenshots/music.png)
+
+## Screenshots
+
+| | |
+|---|---|
+| **Fly trading.** The chart is rasterised onto the R8 photoreceptors (retina thumbnail top right); the fly has just bought on a 28 Hz proboscis drive and been punished with PPL1 dopamine on a losing sell. ![trading](docs/screenshots/trading.png) | **Sugar vs bitter.** Sugar GRNs at 150 Hz drive the proboscis motor neurons to 25 Hz and the fly extends its proboscis onto the drop; bitter leaves them silent. ![feeding](docs/screenshots/feeding.png) |
+| **Swatter.** As the disc grows, LPLC2 and LC4 looming detectors ramp up and the giant fiber DNp01 fires; the fly takes off. ![escape](docs/screenshots/escape.png) | **Antennal grooming.** JO-F afferents recruit the DNg35 and DNg84 descending neurons and the front legs sweep the antennae. ![groom](docs/screenshots/groom.png) |
+| **Courtship.** Pulse song reaches JO-B, the cVA plume reaches ORN DA1, and a third of the central brain (antennal lobe, lateral horn, mushroom body) lights up. ![courtship](docs/screenshots/courtship.png) | **Poke any neuron.** Driving the four MDN moonwalker neurons at 150 Hz: the top responding types are listed and the fly walks backwards. ![poke](docs/screenshots/poke.png) |
+
+Screenshots are captured headlessly with `node tools/screenshot.mjs` while `python serve.py` is running.
+
 ## Run it
 
 ```bash
@@ -96,6 +110,7 @@ web/js/fly.js                  procedural fly rig (FlyModel) + stage props (FlyS
 web/js/audio.js                Web Audio: courtship-song & beat synths, file, mic, band analysis
 web/js/scenarios.js            the experiments: what is stimulated, what is read out, how the fly moves
 web/js/main.js                 UI glue
+tools/screenshot.mjs           headless Chrome (DevTools protocol) capture of the README screenshots
 ```
 
 The worker posts a per-neuron spike trace ~60×/s (zero-copy transfer) which the brain view uploads as a vertex
