@@ -1,0 +1,6 @@
+OFF phase: active 4822 spikes/s 274580
+ by super_class: {'central': {'count': 4576, 'sum': 268871.0}, 'descending': {'count': 123, 'sum': 4380.0}, 'sensory': {'count': 55, 'sum': 561.0}, 'visual_centrifugal': {'count': 16, 'sum': 265.0}, 'visual_projection': {'count': 10, 'sum': 179.0}, 'motor': {'count': 30, 'sum': 134.0}}
+ by class: {'unknown': {'count': 2017, 'sum': 87870.0}, 'Kenyon_Cell': {'count': 1626, 'sum': 60491.0}, 'ALLN': {'count': 209, 'sum': 44662.0}, 'ALPN': {'count': 342, 'sum': 36888.0}, 'LHLN': {'count': 408, 'sum': 33975.0}, 'MBON': {'count': 43, 'sum': 3796.0}, 'LHCENT': {'count': 22, 'sum': 2838.0}, 'MBIN': {'count': 4, 'sum': 1044.0}}
+ top types: {'il3LN6': {'count': 2, 'mean': 334.0}, 'lLN2X03': {'count': 6, 'mean': 333.0}, 'lLN1_bc': {'count': 30, 'mean': 333.0}, 'v2LN30': {'count': 2, 'mean': 333.0}, 'APL': {'count': 2, 'mean': 332.0}, 'lLN1_a': {'count': 3, 'mean': 332.0}, 'lLN2T_e': {'count': 4, 'mean': 330.0}, 'lLN2T_c': {'count': 4, 'mean': 322.0}, 'lLN2X04': {'count': 4, 'mean': 314.0}, 'lLN2F_b': {'count': 4, 'mean': 308.0}, 'lLN2X05': {'count': 4, 'mean': 304.0}, 'lLN2F_a': {'count': 4, 'mean': 292.0}}
+A) sensory afferents input-only: ON active 5285 spikes/s 283376 | OFF active 4682 spikes/s 273497 | proboscis_MN Hz during ON 4.2
+A) ORN_DA1: ON active 4754 spikes/s 270523 | OFF active 4588 spikes/s 272695

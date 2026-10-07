@@ -1,0 +1,7 @@
+# raw FlyWire tables (58 MB, re-downloadable; see README)
+data/raw/
+__pycache__/
+*.pyc
+.claude/
+.DS_Store
+Thumbs.db

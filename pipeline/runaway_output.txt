@@ -1,0 +1,10 @@
+adapt None
+ R8 60Hz then off : [('R8 on', 33201, 662), ('off', 72, 72), ('off2', 0, 0)]
+ sugar+PPL1 then off: [('on', 285734, 5337), ('off', 274652, 4692)]
+ ORN_DA1 then off : [('on', 273225, 4793), ('off', 274500, 4644)]
+ JO-B 150 then off: [('on', 31861, 373), ('off', 100, 100)]
+adapt (0.5, 300.0)
+ R8 60Hz then off : [('R8 on', 23187, 660), ('off', 39, 39), ('off2', 0, 0)]
+ sugar+PPL1 then off: [('on', 101275, 4230), ('off', 70684, 2532)]
+ ORN_DA1 then off : [('on', 92475, 3794), ('off', 71215, 2499)]
+ JO-B 150 then off: [('on', 20465, 348), ('off', 44, 44)]

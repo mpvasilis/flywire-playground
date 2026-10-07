@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>FlyWire Playground: a whole fly brain doing things</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./style.css">
+<script type="importmap">
+{ "imports": { "three": "./vendor/three.module.js", "three/addons/controls/OrbitControls.js": "./vendor/OrbitControls.js" } }
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">🪰 <b>FlyWire Playground</b> <span class="sub">139,255 neurons · 2.7 M connections · leaky integrate-and-fire · FlyWire v783</span></div>
+  <div class="stats">
+    <span title="simulated time">t = <b id="st-time">0.00</b> s</span>
+    <span title="brain-wide firing">spikes/s <b id="st-spk">0</b></span>
+    <span title="neurons currently away from rest">active <b id="st-act">0</b></span>
+    <span title="frames per second">fps <b id="st-fps">0</b></span>
+    <label>speed <input id="speed" type="range" min="0.1" max="2" step="0.1" value="1"><b id="st-speed">1.0×</b></label>
+    <label title="spike-frequency adaptation: each spike raises the threshold 0.2 mV (τ 300 ms). Off = the exact Shiu et al. model."><input type="checkbox" id="adapt" checked> adaptation</label>
+    <label title="short-term synaptic depression: each spike spends 15% of the presynaptic resource, recovering with τ 400 ms. Off = the exact Shiu et al. model."><input type="checkbox" id="std"> depression</label>
+    <button id="btn-pause">⏸</button><button id="btn-quiet" title="silence the network (keeps stimuli and learned weights)">🤫</button><button id="btn-reset" title="restart the experiment">↺</button>
+  </div>
+</header>
+
+<aside id="side">
+  <nav id="scenarios"></nav>
+  <section class="card">
+    <h2 id="sc-title">-</h2>
+    <p id="sc-blurb" class="blurb"></p>
+    <div id="sc-controls"></div>
+  </section>
+  <section class="card">
+    <h3>Stimulated populations <span class="hint">(Poisson drive, Hz per neuron)</span></h3>
+    <div id="inputs" class="meters"></div>
+    <h3>Readouts <span class="hint">(population firing rate, Hz per neuron)</span></h3>
+    <div id="readouts" class="meters"></div>
+    <h3>Brain-wide activity <span class="hint">(spikes per ms of sim time)</span></h3>
+    <canvas id="strip" width="320" height="60"></canvas>
+  </section>
+  <section class="card small">
+    <details><summary>About the model & data</summary>
+      <p>Connectivity: FlyWire FAFB v783 public release (Dorkenwald et al., Schlegel et al., Nature 2024), the tables that power
+        <a href="https://codex.flywire.ai" target="_blank">Codex</a>. Edges with ≥5 synapses; sign from the predicted neurotransmitter (GABA / glutamate inhibitory).</p>
+      <p>Dynamics: the leaky integrate-and-fire model of Shiu et al., Nature 2024 (v<sub>rest</sub>−52 mV, threshold −45 mV, τ<sub>m</sub> 20 ms, τ<sub>syn</sub> 5 ms, 2.2 ms refractory, 1.8 ms delay, 0.275 mV per synapse; Poisson activation at 150 Hz).</p>
+      <p>Avatar: the fly body is a cartoon, but every motion is driven by the firing rate of the named descending or motor neuron populations. Hover a neuron for its FlyWire id.</p>
+    </details>
+  </section>
+</aside>
+
+<main>
+  <div class="pane" id="pane-fly">
+    <canvas id="fly-canvas"></canvas>
+    <div id="fly-overlay"></div>
+    <div class="pane-title">3-D fly · behaviour driven by descending & motor neuron firing</div>
+  </div>
+  <div class="pane" id="pane-brain">
+    <canvas id="brain-canvas"></canvas>
+    <div id="brain-labels"></div>
+    <div class="pane-title">Whole-brain spiking · every point is one real neuron</div>
+    <div id="tooltip"></div>
+    <div class="legend">
+      <span><i style="background:#2a4a8f"></i>optic</span><span><i style="background:#6b4da0"></i>central</span><span><i style="background:#2a8f73"></i>sensory</span>
+      <span><i style="background:#c05a33"></i>descending</span><span><i style="background:#d94040"></i>motor</span><span><i style="background:#ffd86b"></i>firing</span>
+    </div>
+  </div>
+</main>
+
+<div id="loader"><div class="box"><h1>🪰 Loading the fly brain…</h1><div class="bar"><i id="load-bar"></i></div><div id="load-msg">fetching connectome</div></div></div>
+<div id="toast"></div>
+<datalist id="celltypes"></datalist>
+<script type="module" src="./js/main.js"></script>
+</body>
+</html>

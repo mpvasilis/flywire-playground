@@ -1,0 +1,13 @@
+adapt None
+ R8 60Hz then off : [('R8 on', 33201, 662), ('off', 72, 72), ('off2', 0, 0)]
+ sugar+PPL1 then off: [('on', 285734, 5337), ('off', 274652, 4692)]
+ ORN_DA1 then off : [('on', 273225, 4793), ('off', 274500, 4644)]
+ JO-B 150 then off: [('on', 31861, 373), ('off', 100, 100)]
+adapt (0.5, 300.0)
+ R8 60Hz then off : [('R8 on', 23187, 660), ('off', 39, 39), ('off2', 0, 0)]
+ sugar+PPL1 then off: [('on', 101275, 4230), ('off', 70684, 2532)]
+ ORN_DA1 then off : [('on', 92475, 3794), ('off', 71215, 2499)]
+ JO-B 150 then off: [('on', 20465, 348), ('off', 44, 44)]
+(0.2, 300.0) sugar->proboscis_MN Hz 22.6 | runaway test: [('on', 161800, 4745), ('off', 125934, 3296)]
+(0.3, 300.0) sugar->proboscis_MN Hz 17.5 | runaway test: [('on', 134500, 4500), ('off', 99972, 2965)]
+(0.5, 300.0) sugar->proboscis_MN Hz 9.9 | runaway test: [('on', 101275, 4230), ('off', 70684, 2532)]

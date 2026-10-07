@@ -1,0 +1,3 @@
+STD u=0.15 tau=400.0 adapt=None: sugar+PPL1 ON 34865 sp/s (2068 n) -> OFF 10428 sp/s (267 n) | sugar->proboscis_MN 2.4 Hz | LPLC2->DNp01 1.5 Hz
+STD u=0.3 tau=400.0 adapt=None: sugar+PPL1 ON 19200 sp/s (552 n) -> OFF 50 sp/s (40 n) | sugar->proboscis_MN 0.2 Hz | LPLC2->DNp01 0.5 Hz
+STD u=0.15 tau=400.0 adapt=(0.3, 300.0): sugar+PPL1 ON 20036 sp/s (2010 n) -> OFF 21 sp/s (17 n) | sugar->proboscis_MN 1.4 Hz | LPLC2->DNp01 1.5 Hz
